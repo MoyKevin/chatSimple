@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, View, TextInput,Button } from "react-native";
+import { StyleSheet, Text, SafeAreaView, View, TextInput,Button, Image } from "react-native";
 
 export default class Login extends React.Component{
 
   render(){
     return(
       <View>
-        <Text style={styles.titleText}>chatSimple</Text>
+        <Text style={styles.titleText}>chatSimple(DEMO)</Text>
         <View style={styles["login-form"]}>
           <Text>UserName:</Text>
           <TextInput
@@ -16,8 +16,10 @@ export default class Login extends React.Component{
           <TextInput
             style={styles.inputField}
           />
-          <Button style={styles.OauthButtons} title="Google Oauth"/>
-          <Text style={styles.OauthButtons}>Facebook Auth?</Text>
+          <Image
+            source = {require('../assets/googleAuth.png')}
+            style = {styles.OauthButtons}
+          />
         </View>
       </View>
     )
@@ -49,6 +51,9 @@ const styles = StyleSheet.create({
     borderColor: '#000',
   },
   OauthButtons: {
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
+    resizeMode: "contain",
+    width: 200,
+    height : 50
   }
 });
